@@ -1,0 +1,12 @@
+syntax="v1";
+
+type (
+	ExampleReq {
+		Username string `form:"username"`                    //用户名
+		Age      int    `form:"age,optional"`                //年龄可选
+		Content  string `form:"content,options="Hello"|"Hi"` //请求内容，枚举
+	}
+	ExampleResp {
+		Content string `json:"content"`
+	}
+)

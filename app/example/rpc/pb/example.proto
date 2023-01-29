@@ -1,0 +1,17 @@
+syntax="proto3";
+
+option go_package="./pb";
+
+package pb;
+
+message ExampleReq {
+    string username=1;
+}
+
+message ExampleReply{
+    string content=1;
+}
+
+service Example {
+    rpc GetContentByUsername(ExampleReq)returns(ExampleReply); 
+}
