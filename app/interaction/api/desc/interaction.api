@@ -1,0 +1,29 @@
+syntax = "v1"
+
+import "interaction/interaction.api"
+
+info(
+	title: "inter action api"
+	desc: "service"
+	author: ""
+)
+
+@server (
+	prefix: douyin
+	group: interaction
+)
+
+service interaction-api {
+	@doc "favorite action"
+	@handler favoriteAction
+	post /favorite/action (FavoriteActionReq)returns()
+	@doc "get favorite list"
+	@handler GetfavoriteList
+	get /favorite/list (GetFavoriteListReq)returns(FavoriteListReply)
+	@doc "comment action"
+	@handler commentAction
+	post /comment/action (CommentActionReq)returns(CommentActionReply)
+	@doc "view video comment list reversetime"
+	@handler GetcommentList
+	get /comment/list  (GetCommentListReq)returns(CommentListReply)
+}
